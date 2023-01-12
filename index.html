@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Peutinger Demo | aperitiiif batch listing</title>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css'>
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css'>
+  </head>
+  <body>
+    <section class='hero is-info'>
+      <div class='hero-body'>
+        <div class='container'>
+          <h1 class='title'>Peutinger Demo</h1>
+          <p class='subtitle'>Aperitiiif Batch Index</p>
+          <p class='is-5 is-grey'>Last updated 1/12/2023 at 21:45UTC</p>
+          <p class='tags mt-5'>
+            <a target='_blank' class='tag is-danger is-light' href='https://aperitiiif-presentation-api-store.s3.us-east-1.amazonaws.com/peutinger/collection.json'>iiif collection</a>
+            <a target='_blank' class='tag is-link is-light' href='index.json'>index.json</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class='section'>
+      <div class='container'>
+        <h2 class='is-size-4 mb-3'>Items (1)</h2>
+        <div class='table-container'>
+          <table id='table' class='table display is-hoverable is-striped is-bordered'>
+            <thead>
+              <tr>
+                <td>item id</td>
+                <td>label</td>
+                <td>thumbnnail</td>
+                <td>iiif manifest</td>
+                <td>view in viewpoint</td>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td><b>base</b></td>
+                <td>peutinger test</td>
+                <td><a target='_blank' href='https://d1b7k5w7yjwpfg.cloudfront.net/iiif/2/peutinger_base/full/250,/0/default.jpg'><img style="height:100px;width:auto" class='lazy' data-original="https://d1b7k5w7yjwpfg.cloudfront.net/iiif/2/peutinger_base/full/250,/0/default.jpg"/></a></td>
+                <td><a target='_blank' href='https://aperitiiif-presentation-api-store.s3.us-east-1.amazonaws.com/peutinger/base/manifest.json'><img alt='Thumbnail peutinger test' src='https://upload.wikimedia.org/wikipedia/commons/e/e8/International_Image_Interoperability_Framework_logo.png' style="width:25px"/></a></td>
+                <td><a target='_blank' class='is-size-7' href='https://dss.hosting.nyu.edu/viewpoint/mirador/#manifests[]=https%3A%2F%2Faperitiiif-presentation-api-store.s3.us-east-1.amazonaws.com%2Fpeutinger%2Fbase%2Fmanifest.json&theme=dark'>https://dss.hosting.nyu.edu/viewpoint/mirador/#manifests[]=https%3A%2F%2Faperitiiif-presentation-api-store.s3.us-east-1.amazonaws.com%2Fpeutinger%2Fbase%2Fmanifest.json&theme=dark</a></td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </table>
+      </div>
+    </section>
+    <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js'></script>
+    <script src='https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js'></script>
+    <script>
+      $(document).ready(function () {
+        $('#table').DataTable( {
+          drawCallback: function(){
+            $('img.lazy').lazyload();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
