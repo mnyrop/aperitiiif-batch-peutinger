@@ -1,8 +1,6 @@
 # batch config
 
 label:          'Peutinger Demo'
-description:    ''
-attribution:    ''
 
 presentation_api_url: 'https://aperitiiif-presentation-api-store.s3.us-east-1.amazonaws.com'
 image_api_url:        'https://d1b7k5w7yjwpfg.cloudfront.net/iiif/2'
